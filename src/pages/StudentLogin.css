@@ -1,0 +1,22 @@
+.login-box {
+  width: 400px;
+  transition: box-shadow 0.3s ease;
+}
+
+.logo-circle {
+  background-color: #e0e7ff;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  color: #4f46e5;
+}
+.login-box:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+input.form-control {
+  font-weight: 500;
+}

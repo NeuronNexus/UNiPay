@@ -1,0 +1,107 @@
+[
+  {
+    "name": "IIT Kharagpur",
+    "abbreviation": "IIT-KGP",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/4/44/IIT_Kharagpur_Logo.svg"
+  },
+  {
+    "name": "IIT Bombay",
+    "abbreviation": "IIT-B",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/8/87/IIT_Bombay_Logo.svg"
+  },
+  {
+    "name": "IIT Delhi",
+    "abbreviation": "IIT-D",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/e/e1/IIT_Delhi_Logo.svg"
+  },
+  {
+    "name": "IIT Madras",
+    "abbreviation": "IIT-M",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/5/5b/IIT_Madras_Logo.svg"
+  },
+  {
+    "name": "IIT Kanpur",
+    "abbreviation": "IIT-K",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/0/0e/IIT_Kanpur_Logo.svg"
+  },
+  {
+    "name": "IIT Guwahati",
+    "abbreviation": "IIT-G",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/6/6f/IIT_Guwahati_Logo.svg"
+  },
+  {
+    "name": "IIT Roorkee",
+    "abbreviation": "IIT-R",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/9/9b/IIT_Roorkee_Logo.svg"
+  },
+  {
+    "name": "IIT Bhubaneswar",
+    "abbreviation": "IIT-BBS",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/5/58/IIT_Bhubaneswar_Logo.svg"
+  },
+  {
+    "name": "IIT Gandhinagar",
+    "abbreviation": "IIT-Gn",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/f/fc/IIT_Gandhinagar_Logo.svg"
+  },
+  {
+    "name": "IIT Hyderabad",
+    "abbreviation": "IIT-H",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/4/4a/IIT_Hyderabad_Logo.svg"
+  },
+  {
+    "name": "IIT Jodhpur",
+    "abbreviation": "IIT-J",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/d/dc/IIT_Jodhpur_Logo.svg"
+  },
+  {
+    "name": "IIT Patna",
+    "abbreviation": "IIT-P",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/8/8f/IIT_Patna_Logo.svg"
+  },
+  {
+    "name": "IIT Ropar",
+    "abbreviation": "IIT-RPR",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/e/e4/IIT_Ropar_Logo.svg"
+  },
+  {
+    "name": "IIT Indore",
+    "abbreviation": "IIT-I",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/1/10/IIT_Indore_Logo.svg"
+  },
+  {
+    "name": "IIT Mandi",
+    "abbreviation": "IIT-Mandi",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/3/3e/IIT_Mandi_Logo.svg"
+  },
+  {
+    "name": "IIT Palakkad",
+    "abbreviation": "IIT-PKD",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/4/47/IIT_Palakkad_Logo.svg"
+  },
+  {
+    "name": "IIT Tirupati",
+    "abbreviation": "IIT-TP",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/0/05/IIT_Tirupati_Logo.svg"
+  },
+  {
+    "name": "IIT Bhilai",
+    "abbreviation": "IIT-BH",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/0/03/IIT_Bhilai_Logo.svg"
+  },
+  {
+    "name": "IIT Goa",
+    "abbreviation": "IIT-GOA",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/f/f6/IIT_Goa_Logo.svg"
+  },
+  {
+    "name": "IIT Jammu",
+    "abbreviation": "IIT-JM",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/c/c0/IIT_Jammu_Logo.svg"
+  },
+  {
+    "name": "IIT Dharwad",
+    "abbreviation": "IIT-DWD",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/b/b3/IIT_Dharwad_Logo.svg"
+  }
+]
