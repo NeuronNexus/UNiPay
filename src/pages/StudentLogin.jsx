@@ -142,13 +142,8 @@ export function StudentLogin() {
 
           <div className="login-links-container">
             <Link to="/" className="back-link">
-              ← Back to role selection
+              ← Back
             </Link>
-            {userRole === "student" && (
-              <Link to="/register" className="register-link">
-                Register as a new student
-              </Link>
-            )}
           </div>
         </div>
       )}

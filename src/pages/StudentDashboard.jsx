@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import { PaymentForm } from "./PaymentModal"; // Assuming PaymentModal.jsx exists
 import "./StudentDashboard.css";
 
 
@@ -18,8 +17,6 @@ const StudentDashboard = () => {
   // Wallet balance state, initialized to 1 lakh (100,000)
   const [walletBalance, setWalletBalance] = useState(100000);
 
-  const [showPaymentForm, setShowPaymentForm] = useState(false);
-  const [paymentDetails, setPaymentDetails] = useState({ item: "", amount: "" });
   const [showSuccess, setShowSuccess] = useState(false);
   const [showWalletBalance, setShowWalletBalance] = useState(false);
 
@@ -107,6 +104,19 @@ const StudentDashboard = () => {
     setShowMpinConfirmationModal(true);
   };
 
+  const handlePaymentSuccess = () => {
+    setShowSuccess(true);
+    // Mark the item as paid
+    if (currentPaymentItem) {
+      setPendingPayments(prevPayments =>
+        prevPayments.map(p =>
+          p.id === currentPaymentItem.id ? { ...p, paid: true } : p
+        )
+      );
+    }
+    setCurrentPaymentItem(null);
+  };
+
   // Handle MPIN confirmation
   const handleMpinConfirmation = (e) => {
     e.preventDefault();
@@ -118,9 +128,7 @@ const StudentDashboard = () => {
         setWalletBalance(prevBalance => prevBalance - paymentAmount); // Deduct from balance
         setShowMpinConfirmationModal(false);
         setMpinInput('');
-        // Proceed with payment logic (show payment form)
-        setShowPaymentForm(true);
-        setPaymentDetails({ item: currentPaymentItem.description, amount: currentPaymentItem.amount }); // Pass the correct details
+        handlePaymentSuccess(); // Directly trigger success flow
       } else {
         setMpinError('Insufficient wallet balance.');
       }
@@ -133,26 +141,6 @@ const StudentDashboard = () => {
     setShowMpinConfirmationModal(false);
     setMpinInput('');
     setMpinError('');
-    setCurrentPaymentItem(null);
-  };
-
-
-  const handleCancelPayment = () => {
-    setShowPaymentForm(false);
-    setCurrentPaymentItem(null); // Cleanup on cancel
-  };
-
-  const handlePaymentSuccess = () => {
-    setShowPaymentForm(false);
-    setShowSuccess(true);
-    // Mark the item as paid instead of removing it
-    if (currentPaymentItem) {
-      setPendingPayments(prevPayments =>
-        prevPayments.map(p =>
-          p.id === currentPaymentItem.id ? { ...p, paid: true } : p
-        )
-      );
-    }
     setCurrentPaymentItem(null);
   };
 
@@ -655,7 +643,7 @@ const StudentDashboard = () => {
                 >
                   <a
                       href="#/register"
-                      className="btn"
+                      className="btn btn-primary"
                       style={{
                           fontSize: "16px",
                           padding: "10px 28px",
@@ -920,16 +908,6 @@ const StudentDashboard = () => {
           document.body
         )
       }
-
-      {/* Conditionally Rendered Payment Form */}
-      {showPaymentForm && (
-        <PaymentForm
-          item={paymentDetails.item}
-          amount={paymentDetails.amount}
-          onSub={handlePaymentSuccess}
-          onCancel={handleCancelPayment}
-        />
-      )}
 
       {/* MPIN Confirmation Modal */}
       {showMpinConfirmationModal &&
