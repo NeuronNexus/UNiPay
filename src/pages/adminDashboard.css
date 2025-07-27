@@ -1,0 +1,459 @@
+/* Import Google Fonts: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #334155; /* slate-700 */
+}
+
+/* Background for the entire page */
+.admin-dashboard-body-bg {
+    background: linear-gradient(to bottom right, #f0f9ff, #f8e7ff); /* Very light blue to very light purple */
+    min-height: 100vh;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px; /* Wider container for admin dashboard */
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .container {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .container {
+        padding: 2rem;
+    }
+}
+
+/* Header Section */
+.admin-header-box { /* Renamed from admin-header-section to match student dashboard for consistency */
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #4c1d95; /* Deep purple for branding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white; /* Added background for header box */
+    padding: 20px 24px; /* Added padding */
+    border-radius: 12px; /* Added border-radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Added shadow */
+}
+
+@media (min-width: 768px) {
+    .admin-header-box {
+        flex-direction: row; /* Align items horizontally on larger screens */
+        justify-content: space-between; /* Space out title and actions */
+        align-items: center;
+    }
+}
+
+.admin-header-title { /* Renamed from admin-main-title */
+    font-size: 2.2rem; /* Adjusted for header box */
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.5rem;
+    color: #312e81; /* Indigo-900 */
+}
+
+@media (min-width: 768px) {
+    .admin-header-title {
+        font-size: 2.5rem; /* Adjusted for header box on larger screens */
+    }
+}
+
+.admin-header-subtitle { /* Renamed from admin-subtitle */
+    font-size: 1.1rem; /* Adjusted for header box */
+    font-weight: 500;
+    color: #6b21a8;
+    margin-bottom: 0; /* No bottom margin in header box */
+}
+
+.admin-header-actions {
+    margin-top: 1rem;
+    width: auto; /* Adjust width for actions in header */
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .admin-header-actions {
+        margin-top: 0; /* No top margin on larger screens */
+    }
+}
+
+.admin-download-all-btn {
+    background: linear-gradient(to right, #8b5cf6, #c084fc); /* purple-500 to purple-400 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.admin-download-all-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    background: linear-gradient(to right, #7c3aed, #a78bfa);
+}
+
+/* Main Content Grid */
+.admin-dashboard-main { /* Renamed from admin-main-grid */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem; /* Added margin-top to separate from header */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .admin-dashboard-main {
+        grid-template-columns: 1.5fr 1fr; /* Left column wider than right */
+    }
+}
+
+.admin-col-left, .admin-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Card Styles */
+.admin-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.admin-card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b; /* slate-800 */
+    margin-bottom: 0.75rem;
+}
+
+.admin-card-subtitle {
+    font-size: 0.95rem;
+    color: #64748b; /* slate-500 */
+    margin-bottom: 1.5rem;
+}
+
+.admin-no-data {
+    font-style: italic;
+    color: #94a3b8; /* slate-400 */
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Student List */
+.admin-student-list-card {
+    /* Specific styling for the student list card if needed */
+}
+
+.admin-student-list {
+    max-height: 400px; /* Scrollable list */
+    overflow-y: auto;
+    border: 1px solid #e2e8f0; /* slate-200 */
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+}
+
+.admin-student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9; /* slate-100 */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 0.5rem;
+}
+
+.admin-student-item:last-child {
+    border-bottom: none;
+}
+
+.admin-student-item:hover {
+    background-color: #f0f9ff; /* blue-50 */
+}
+
+.admin-student-item.selected {
+    background-color: #e0f2fe; /* blue-100 */
+    font-weight: 600;
+    color: #3b82f6; /* blue-500 */
+}
+
+.admin-student-name {
+    font-size: 1rem;
+    color: #334155;
+}
+
+.admin-student-item.selected .admin-student-name {
+    color: #1d4ed8; /* blue-700 */
+}
+
+.admin-download-log-btn {
+    background-color: #e0f2fe; /* blue-100 */
+    color: #3b82f6; /* blue-500 */
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.admin-download-log-btn:hover {
+    background-color: #bfdbfe; /* blue-200 */
+    transform: translateY(-1px);
+}
+
+/* Pending Payments Section */
+.admin-pending-payments-card {
+    /* Specific styling if needed */
+}
+
+.admin-dashboard-table { /* Reused from student dashboard for consistency */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-dashboard-table th,
+.admin-dashboard-table td {
+    text-align: left;
+    padding: 12px 0;
+    vertical-align: middle;
+}
+
+.admin-dashboard-table thead th {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-dashboard-table tbody tr:not(:last-child) td {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-dashboard-table td:last-child {
+    text-align: right;
+}
+
+.admin-payment-item { /* Used for individual payment rows if not a table */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px dashed #e2e8f0; /* slate-200 */
+}
+
+.admin-payment-item:last-child {
+    border-bottom: none;
+}
+
+.admin-payment-description {
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.admin-payment-due-date {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.admin-payment-amount {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    color: #ef4444; /* red-500 */
+}
+
+.admin-pay-button.disabled {
+    background-color: #e2e8f0; /* slate-200 */
+    color: #94a3b8; /* slate-400 */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: not-allowed;
+    border: none;
+    font-weight: 600;
+}
+
+/* Status Badges for Payments */
+.admin-status-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.admin-status-badge.pending {
+    background-color: #fef9c3; /* yellow-100 */
+    color: #a16207; /* yellow-700 */
+}
+
+.admin-status-badge.completed {
+    background-color: #dcfce7; /* green-100 */
+    color: #16a34a; /* green-600 */
+}
+
+
+/* Student Wallet Status */
+.admin-wallet-status-card {
+    text-align: center;
+}
+
+.admin-wallet-info {
+    margin-top: 1rem;
+}
+
+.admin-wallet-text {
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 1rem;
+}
+
+.admin-wallet-login-button.disabled {
+    background: linear-gradient(to right, #e9d5ff, #f3e8ff); /* light purple gradient */
+    color: #a855f7; /* purple-500 */
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: not-allowed;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Quick Actions */
+.admin-quick-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .admin-quick-actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.admin-quick-action-link {
+    background-color: #f0f9ff; /* blue-50 */
+    border: 1px solid #bfdbfe; /* blue-200 */
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #3b82f6; /* blue-500 */
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.admin-quick-action-link:hover {
+    background-color: #dbeafe; /* blue-100 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.admin-quick-action-link svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #6366f1; /* indigo-500 */
+}
+
+/* Events & Opportunities */
+.admin-event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to start for multi-line description */
+    padding: 1rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.admin-event-item:last-child {
+    border-bottom: none;
+}
+
+.admin-event-title {
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.admin-event-description {
+    font-size: 0.85rem;
+    color: #475569;
+    margin-bottom: 0.5rem;
+}
+
+.admin-event-fee {
+    font-weight: 500;
+    color: #6b21a8; /* purple-800 */
+    font-size: 0.9rem;
+}
+
+.admin-event-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.admin-event-viewed {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #22c55e; /* green-500 */
+    background-color: #dcfce7; /* green-100 */
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+}
+
+.admin-get-details-button.disabled {
+    background-color: #e2e8f0;
+    color: #94a3b8;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: not-allowed;
+    border: none;
+    font-weight: 600;
+}
+
+/* Footer */
+.admin-footer {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 4rem;
+}

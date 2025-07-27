@@ -1,0 +1,395 @@
+/* Import Google Fonts: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Custom styles to use the Inter font family */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f1f5f9; /* Equivalent to bg-slate-100 */
+}
+
+/* Main container with shadow and rounded corners */
+.main-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem; /* Equivalent to m-6 */
+    background-color: #ffffff; /* Equivalent to bg-white */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-2xl */
+    border-radius: 1rem; /* Equivalent to rounded-2xl */
+    min-height: 600px;
+    width: 100%; /* Ensure it takes full width on small screens */
+    max-width: 1000px; /* Max width to prevent it from getting too wide */
+}
+
+@media (min-width: 768px) { /* Equivalent to md breakpoint */
+    .main-container {
+        flex-direction: row;
+        margin: 0; /* Remove margin on larger screens if centered */
+    }
+}
+
+/* Left Side: Branding and Information */
+.left-side-branding {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem; /* Equivalent to p-8 */
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(to bottom right, #db2777, #a21caf); /* Equivalent to bg-gradient-to-br from-pink-600 to-fuchsia-700 */
+    border-top-left-radius: 1rem; /* Equivalent to rounded-l-2xl */
+    border-bottom-left-radius: 1rem; /* Only top-left and bottom-left for md-flex-row */
+    border-top-right-radius: 1rem; /* For mobile, ensure it's fully rounded on both sides if it's not md-flex-row */
+    border-bottom-right-radius: 1rem; /* For mobile */
+}
+
+@media (min-width: 768px) {
+    .left-side-branding {
+        padding: 3.5rem; /* Equivalent to md:p-14 */
+        width: 50%; /* Equivalent to md:w-1/2 */
+        border-top-right-radius: 0; /* Override for larger screens */
+        border-bottom-right-radius: 0; /* Override for larger screens */
+    }
+}
+
+.logo-container {
+    margin: 0 auto; /* Equivalent to mx-auto */
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+}
+
+.logo-svg {
+    width: 6rem; /* Equivalent to w-24 */
+    height: 6rem; /* Equivalent to h-24 */
+}
+
+.main-title {
+    font-size: 2.25rem; /* Equivalent to text-4xl */
+    font-weight: 700; /* Equivalent to font-bold */
+}
+
+.subtitle {
+    margin-top: 1rem; /* Equivalent to mt-4 */
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    color: #fbcfe8; /* Equivalent to text-pink-100 */
+}
+
+.info-text {
+    max-width: 28rem; /* Equivalent to max-w-md */
+    margin-left: auto; /* Equivalent to mx-auto */
+    margin-right: auto; /* Equivalent to mx-auto */
+    margin-top: 1.5rem; /* Equivalent to mt-6 */
+    color: #f7adcc; /* Equivalent to text-pink-200 */
+}
+
+/* Right Side: Registration Form & Success Message */
+.right-side-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem; /* Equivalent to p-8 */
+    background-color: #f8fafc; /* Equivalent to bg-slate-50 */
+    border-top-right-radius: 1rem; /* Equivalent to rounded-r-2xl */
+    border-bottom-right-radius: 1rem; /* For mobile, ensure it's fully rounded */
+    border-bottom-left-radius: 1rem; /* For mobile */
+}
+
+@media (min-width: 768px) {
+    .right-side-form-container {
+        padding: 3.5rem; /* Equivalent to md:p-14 */
+        width: 50%; /* Equivalent to md:w-1/2 */
+        border-bottom-left-radius: 0; /* Override for larger screens */
+    }
+}
+
+.form-title {
+    margin-bottom: 0.75rem; /* Equivalent to mb-3 */
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #334155; /* Equivalent to text-slate-800 */
+}
+
+.form-subtitle {
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+    font-weight: 300; /* Equivalent to font-light */
+    color: #64748b; /* Equivalent to text-slate-500 */
+}
+
+.registration-form, .otp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Equivalent to space-y-4 */
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 0.25rem; /* Equivalent to mb-1 */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    font-weight: 500; /* Equivalent to font-medium */
+    color: #475569; /* Equivalent to text-slate-700 */
+}
+
+.input-hint {
+    margin-bottom: 0.25rem; /* Equivalent to mb-1 */
+    font-size: 0.75rem; /* Equivalent to text-xs */
+    color: #ec4899; /* Equivalent to text-pink-500 */
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem; /* Equivalent to gap-1 */
+}
+
+.hint-icon {
+    display: inline;
+    width: 1rem; /* Equivalent to w-4 */
+    height: 1rem; /* Equivalent to h-4 */
+    color: #f472b6; /* Equivalent to text-pink-400 */
+}
+
+/* Specific animation for the mobile icon */
+.animate-bounce-icon .hint-icon {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.625rem 1rem; /* Equivalent to px-4 py-2.5 */
+    border: 1px solid #cbd5e1; /* Equivalent to border border-slate-300 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    outline: none; /* Equivalent to focus:outline-none */
+    transition: all 0.2s ease-in-out; /* Equivalent to transition duration-200 */
+}
+
+.form-input:focus {
+    border-color: #ec4899; /* Custom focus ring color */
+    box-shadow: 0 0 0 2px #fbcfe8; /* Custom focus ring equivalent */
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-select:focus {
+    border-color: #ec4899;
+    box-shadow: 0 0 0 2px #fbcfe8;
+}
+
+.form-input.mt-2 {
+    margin-top: 0.5rem; /* Equivalent to mt-2 */
+}
+
+/* Error message styling */
+.error-message {
+    color: #ef4444; /* Equivalent to text-red-500 */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    display: block;
+    margin-top: 0.5rem; /* Add some space above the error message */
+}
+
+.error-message.hidden {
+    display: none;
+}
+
+/* Specific error border for inputs */
+.input-error-border {
+    border-color: #ef4444 !important; /* Red border for error */
+}
+
+/* Password input container for the toggle icon */
+.password-input-container {
+    position: relative;
+    /* This div already has a default gap from .registration-form,
+       so the label and hint are spaced correctly. */
+}
+
+.password-input-container .form-input {
+    padding-right: 2.5rem; /* Make space for the icon */
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 0.75rem; /* Adjust as needed */
+    /* The top positioning needs to account for the label and hint */
+    top: calc(1rem + 0.25rem + 0.75rem + 0.625rem / 2); /* Approximate position: label height + hint height + hint margin-bottom + half input padding-top */
+    cursor: pointer;
+    color: #64748b; /* Icon color */
+    height: 1.25rem; /* w-5 h-5 equivalent */
+    width: 1.25rem;
+}
+
+/* Adjust the top value more accurately based on the structure for the icon */
+.password-input-container .password-toggle-icon {
+    top: 3.25rem; /* Adjusted to visually align with the input field */
+}
+
+
+.terms-checkbox-container {
+    display: flex;
+    align-items: flex-start; /* Equivalent to items-start */
+}
+
+.terms-checkbox {
+    height: 1rem; /* Equivalent to h-4 */
+    width: 1rem; /* Equivalent to w-4 */
+    margin-top: 0.25rem; /* Equivalent to mt-1 */
+    color: #db2777; /* Equivalent to text-pink-600 */
+    border: 1px solid #cbd5e1; /* Equivalent to border-slate-300 */
+    border-radius: 0.25rem; /* Equivalent to rounded */
+    /* Custom style for focus ring to match the brand's pink */
+    box-shadow: none; /* Reset default focus outline */
+}
+
+.terms-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fbcfe8; /* focus:ring-pink-500 equivalent */
+}
+
+.terms-label {
+    margin-left: 0.5rem; /* Equivalent to ml-2 */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    color: #475569; /* Equivalent to text-slate-600 */
+}
+
+.terms-link {
+    font-weight: 500; /* Equivalent to font-medium */
+    color: #db2777; /* Equivalent to text-pink-600 */
+    text-decoration: none;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #db2777; /* Equivalent to bg-pink-600 */
+    color: #ffffff;
+    font-weight: 700; /* Equivalent to font-bold */
+    padding: 0.75rem 1.5rem; /* Equivalent to py-3 px-6 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Equivalent to transition-all duration-300 */
+    transform: scale(1); /* Reset transform for initial state */
+    outline: none;
+}
+
+.submit-button:hover {
+    background-color: #c026d3; /* Equivalent to hover:bg-pink-700 */
+    transform: scale(1.05); /* Equivalent to hover:scale-105 */
+}
+
+.submit-button:focus {
+    box-shadow: 0 0 0 4px #fbcfe8; /* Equivalent to focus:ring-4 focus:ring-pink-300 */
+}
+
+.login-link-container {
+    margin-top: 1.5rem; /* Equivalent to mt-6 */
+    text-align: center;
+    color: #475569; /* Equivalent to text-slate-600 */
+}
+
+.login-link {
+    font-weight: 500; /* Equivalent to font-medium */
+    color: #db2777; /* Equivalent to text-pink-600 */
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* OTP Verification Container */
+.otp-container {
+    text-align: center;
+}
+
+.otp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.otp-input {
+    text-align: center;
+    font-size: 1.25rem; /* Larger font for OTP input */
+    letter-spacing: 0.5rem; /* Space out OTP digits */
+}
+
+.otp-button {
+    margin-top: 1rem;
+}
+
+/* Success Message Container */
+.success-container {
+    text-align: center;
+}
+
+.success-icon {
+    width: 5rem; /* Equivalent to w-20 */
+    height: 5rem; /* Equivalent to h-20 */
+    margin-left: auto; /* Equivalent to mx-auto */
+    margin-right: auto; /* Equivalent to mx-auto */
+    color: #22c55e; /* Equivalent to text-green-500 */
+}
+
+.success-title {
+    margin-top: 1rem; /* Equivalent to mt-4 */
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #334155; /* Equivalent to text-slate-800 */
+}
+
+.success-message-text {
+    margin-top: 0.5rem; /* Equivalent to mt-2 */
+    color: #475569; /* Equivalent to text-slate-600 */
+}
+
+.proceed-to-login-button {
+    margin-top: 2rem; /* Equivalent to mt-8 */
+    display: block;
+    width: 100%;
+    background-color: #db2777;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    outline: none;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.proceed-to-login-button:hover {
+    background-color: #c026d3;
+    transform: scale(1.05);
+}
+
+.proceed-to-login-button:focus {
+    box-shadow: 0 0 0 4px #fbcfe8;
+}
